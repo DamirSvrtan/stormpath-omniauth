@@ -1,0 +1,146 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stormpath.com/v1/applications/49W74qREYJevxnhYKFm9Jl/accounts
+    body:
+      encoding: UTF-8
+      string: '{"email":"test+foo+bar@example.com","password":"Succ3ss!","givenName":"Given","surname":"Surname","username":"testfoobar"}'
+    headers:
+      Content-Length:
+      - 122
+      Accept:
+      - application/json
+      User-Agent:
+      - Stormpath-RubySDK/0.5.1.SNAPSHOT
+      Content-Type:
+      - application/json
+      Host:
+      - api.stormpath.com
+      X-Stormpath-Date:
+      - 20130520T210906Z
+      Authorization:
+      - SAuthc1 sauthc1Id=1QYHMUW1JDFS5TSBZ2AMR0K32/20130520/64b95d23-ef8b-41f2-931a-076cb358e022/sauthc1_request,
+        sauthc1SignedHeaders=accept;content-length;content-type;host;user-agent;x-stormpath-date,
+        sauthc1Signature=319b9f8c14b04b7b0362eebbf10cba89f3ef3dfb0a203e9af9a1953ef9f70605
+      Cookie:
+      - AWSELB=0B5B69470884855313135CB85585942B1AF913DB49737D37FA29F0B9DB476EC0AF8192B23CA57CBEBD5BD57CCEC2368CEBB9080DC8CB9FAF99EC8FCC99858F17219B2CDE54
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 20 May 2013 21:09:01 GMT
+      Location:
+      - https://api.stormpath.com/v1/accounts/3piqGCT2w3PmhWKtH9neqt
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 19-May-2013 21:09:00
+        GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"href":"https://api.stormpath.com/v1/accounts/3piqGCT2w3PmhWKtH9neqt","username":"testfoobar","email":"test+foo+bar@example.com","fullName":"Given
+        Surname","givenName":"Given","middleName":null,"surname":"Surname","status":"ENABLED","groups":{"href":"https://api.stormpath.com/v1/accounts/3piqGCT2w3PmhWKtH9neqt/groups"},"groupMemberships":{"href":"https://api.stormpath.com/v1/accounts/3piqGCT2w3PmhWKtH9neqt/groupMemberships"},"directory":{"href":"https://api.stormpath.com/v1/directories/49WFix1bG8bLuqXp4BNokv"},"tenant":{"href":"https://api.stormpath.com/v1/tenants/4W6Lm9qs3UIfYx4y2na0ns"},"emailVerificationToken":null}'
+    http_version: 
+  recorded_at: Mon, 20 May 2013 21:09:07 GMT
+- request:
+    method: post
+    uri: https://api.stormpath.com/v1/applications/49W74qREYJevxnhYKFm9Jl/loginAttempts
+    body:
+      encoding: UTF-8
+      string: '{"type":"basic","value":"dGVzdCtmb28rYmFyQGV4YW1wbGUuY29tOndyb25ncGFzc3dvcmQ="}'
+    headers:
+      Content-Length:
+      - 79
+      Accept:
+      - application/json
+      User-Agent:
+      - Stormpath-RubySDK/0.5.1.SNAPSHOT
+      Content-Type:
+      - application/json
+      Host:
+      - api.stormpath.com
+      X-Stormpath-Date:
+      - 20130520T210907Z
+      Authorization:
+      - SAuthc1 sauthc1Id=1QYHMUW1JDFS5TSBZ2AMR0K32/20130520/9453a1d9-46b0-499d-a5cb-4b494ddaba50/sauthc1_request,
+        sauthc1SignedHeaders=accept;content-length;content-type;host;user-agent;x-stormpath-date,
+        sauthc1Signature=8674b213e39e346e56702277d2f11d5bdbaf797b47b4e548f3185e6a4a37bc04
+      Cookie:
+      - AWSELB=0B5B69470884855313135CB85585942B1AF913DB49737D37FA29F0B9DB476EC0AF8192B23CA57CBEBD5BD57CCEC2368CEBB9080DC8CB9FAF99EC8FCC99858F17219B2CDE54
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 20 May 2013 21:09:02 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 19-May-2013 21:09:01
+        GMT
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 19-May-2013 21:09:02
+        GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status":400,"code":400,"message":"Invalid username or password.","developerMessage":"Invalid
+        username or password.","moreInfo":"mailto:support@stormpath.com"}'
+    http_version: 
+  recorded_at: Mon, 20 May 2013 21:09:08 GMT
+- request:
+    method: delete
+    uri: https://api.stormpath.com/v1/accounts/3piqGCT2w3PmhWKtH9neqt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Stormpath-RubySDK/0.5.1.SNAPSHOT
+      Host:
+      - api.stormpath.com
+      X-Stormpath-Date:
+      - 20130520T210908Z
+      Authorization:
+      - SAuthc1 sauthc1Id=1QYHMUW1JDFS5TSBZ2AMR0K32/20130520/1a29619d-f7cf-4c05-9461-a9c4bbe70bd0/sauthc1_request,
+        sauthc1SignedHeaders=accept;host;user-agent;x-stormpath-date, sauthc1Signature=bd41e4172739d7b1f82177c0eac7dd60827c81713318e9a126bedfbfa84f6502
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - AWSELB=0B5B69470884855313135CB85585942B1AF913DB49737D37FA29F0B9DB476EC0AF8192B23CA57CBEBD5BD57CCEC2368CEBB9080DC8CB9FAF99EC8FCC99858F17219B2CDE54
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Date:
+      - Mon, 20 May 2013 21:09:02 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 19-May-2013 21:09:02
+        GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 20 May 2013 21:09:08 GMT
+recorded_with: VCR 2.5.0

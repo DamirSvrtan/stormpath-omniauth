@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "omniauth", "~> 1.0"
   s.add_runtime_dependency "bcrypt-ruby", "~> 3.0"
 
+  s.add_development_dependency "webmock"
+  s.add_development_dependency "vcr"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "capybara", "~> 1.1.2"

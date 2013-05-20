@@ -1,22 +1,22 @@
 require 'spec_helper'
 
-describe "Authentication" do
+describe "Authentication", :vcr do
 
-  email = "test#{SecureRandom.hex}@example.com"
+  email = "test+foo+bar@example.com"
   password = 'Succ3ss!'
 
-  before(:all) do
+  before do
     @u = User.new
     @u.email = email
     @u.password = password
     @u.given_name = 'Given'
     @u.surname = 'Surname'
-    @u.username = "test#{SecureRandom.hex}"
+    @u.username = "testfoobar"
 
     @u.save
   end
 
-  after(:all) do
+  after do
     @u.destroy
   end
 

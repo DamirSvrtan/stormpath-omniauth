@@ -1,3 +1,3 @@
 require 'omniauth'
-require 'omniauth-stormpath/version'
+require 'stormpath-omniauth/version'
 require 'omniauth/strategies/stormpath'

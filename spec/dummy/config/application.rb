@@ -8,7 +8,7 @@ require "active_resource/railtie"
 require "sprockets/railtie"
 
 Bundler.require
-require 'omniauth-stormpath'
+require 'stormpath-omniauth'
 
 module Dummy
   class Application < Rails::Application

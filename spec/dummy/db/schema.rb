@@ -17,6 +17,4 @@ ActiveRecord::Schema.define(:version => 20120301022509) do
     t.string "stormpath_url"
   end
 
-  add_index "users", ["stormpath_url"], :name => "index_users_on_stormpath_url"
-
 end

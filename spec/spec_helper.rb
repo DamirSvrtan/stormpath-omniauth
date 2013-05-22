@@ -1,5 +1,7 @@
 require 'vcr'
 require 'webmock'
+require 'pry'
+require 'pry-debugger'
 
 ENV["RAILS_ENV"] ||= 'test'
 

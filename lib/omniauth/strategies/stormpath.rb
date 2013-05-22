@@ -7,7 +7,7 @@ module OmniAuth
       option :auth_redirect, nil
       option :login_field, :email_or_username
       option :password_field, :password
-      option :obtain_uid, Proc.new { |o| o.stormpath_url }
+      option :obtain_uid, nil
 
       def request_phase
         Rack::Response.new.tap do |r|

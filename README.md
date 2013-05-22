@@ -40,16 +40,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-Without Rack:
-
-```ruby
-OmniAuth::Strategies::Developer.new(some_app, {
-  :auth_redirect => '/login',
-  :authentication_class => ::Authenticator,
-  :obtain_uid => Proc.new { |o| o.href }
-})
-```
-
 A quick explanation of the three required options:
 
 ### auth_redirect

@@ -3,11 +3,11 @@ module OmniAuth
     class Stormpath
       include OmniAuth::Strategy
 
-      option :authenticator_class, nil
+      option :authenticator_method, nil
       option :auth_redirect, nil
       option :login_field, :email_or_username
+      option :obtain_uid_method, nil
       option :password_field, :password
-      option :obtain_uid, nil
 
       def request_phase
         Rack::Response.new.tap do |r|
@@ -18,7 +18,7 @@ module OmniAuth
 
       def callback_phase
         begin
-          @user = options[:authenticator_class].authenticate(login, password)
+          @user = options[:authenticator_method].call(login, password)
         rescue
           return fail!(:invalid_credentials)
         end
@@ -35,7 +35,7 @@ module OmniAuth
       end
 
       uid do
-        options[:obtain_uid].call(@user)
+        options[:obtain_uid_method].call(@user)
       end
 
     end

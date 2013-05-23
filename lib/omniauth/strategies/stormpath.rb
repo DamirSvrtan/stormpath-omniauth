@@ -27,11 +27,11 @@ module OmniAuth
       end
 
       def login
-        request[:sessions][options[:login_field].to_s]
+        request[options[:login_field].to_s]
       end
 
       def password
-        request[:sessions][options[:password_field].to_s]
+        request[options[:password_field].to_s]
       end
 
       uid do

@@ -1,24 +1,21 @@
+require 'stormpath-sdk'
+
 module OmniAuth
   module Strategies
     class Stormpath
       include OmniAuth::Strategy
 
-      option :authenticator_method, nil
-      option :auth_redirect, nil
       option :login_field, :email_or_username
-      option :obtain_uid_method, nil
       option :password_field, :password
-
-      def request_phase
-        Rack::Response.new.tap do |r|
-          r.redirect options[:auth_redirect]
-          r.finish
-        end
-      end
+      option :stormpath_application, nil
 
       def callback_phase
+        raise 'missing stormpath_application' unless options[:stormpath_application]
+
         begin
-          @user = options[:authenticator_method].call(login, password)
+          login_request = ::Stormpath::Authentication::UsernamePasswordRequest.new(login, password)
+          auth_result = options[:stormpath_application].authenticate_account(login_request)
+          @account = auth_result.account
         rescue
           return fail!(:invalid_credentials)
         end
@@ -35,7 +32,7 @@ module OmniAuth
       end
 
       uid do
-        options[:obtain_uid_method].call(@user)
+        @account.href
       end
 
     end

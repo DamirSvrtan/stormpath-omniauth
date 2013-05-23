@@ -23,7 +23,7 @@ describe "Authentication", :vcr do
   describe "Sign in" do
 
     before do
-      visit "/auth/stormpath"
+      visit "/session/new"
       fill_in "email_or_username", with: email
     end
 
@@ -65,7 +65,7 @@ describe "Authentication", :vcr do
   describe "Sign out" do
 
     before do
-      visit "/auth/stormpath"
+      visit "/session/new"
       fill_in "email_or_username", with: email
       fill_in "password", with: password
       click_button "Sign in"

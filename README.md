@@ -22,26 +22,23 @@ for developers. This is an OmniAuth strategy that will integrate with Stormpath.
    rake spec
    ```
 
-## Required Configuration Options
+## Usage
 
-In order to use the Stormpath OmniAuth Strategy, three configuration options
-must be specified. These options can be passed in a hash (second parameter of
-the Strategy constructor), or (more commonly) set up by Rack during the "setup"
-phase.
-
-With Rack:
+To use this with Rails, include the following initializer:
 
 ```ruby
-# if using 'stormpath-rails'
-
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :stormpath, :setup => lambda { |env|
-    env['omniauth.strategy'].options[:stormpath_application] = ::Stormpath::Rails::Client.root_application
+  provider :stormpath, setup: -> env {
+    env['omniauth.strategy'].options[:stormpath_application] = ::Stormpath::Rails::Client.application
   }
 end
+```
 
-# if using without 'stormpath-rails' - perhaps with the SDK and Sinatra
+Check out this [Rails sample app][rails-omniauth-sample].
 
+To use this with Sinatra, include the following:
+
+```ruby
 use OmniAuth::Builder do
   provider :stormpath, setup: -> env {
     env['omniauth.strategy'].options[:stormpath_application] = ::MySinatraApp.get_application
@@ -50,6 +47,11 @@ end
 
 ```
 
+Check out this [Sinatra sample app][sinatra-omniauth-sample].
+
 The Stormpath OmniAuth strategy requires only that you pass (as an option) a
 reference to an instance of Stormpath::Resource::Application that the strategy
 will use to authenticate login attempts.
+
+  [sinatra-omniauth-sample]: https://github.com/stormpath/stormpath-ruby-samples/tree/master/sinatra-omniauth
+  [rails-omniauth-sample]: https://github.com/stormpath/stormpath-ruby-samples/tree/master/rails-omniauth

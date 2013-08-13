@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency "bcrypt-ruby", "~> 3.0"
   s.add_runtime_dependency "omniauth", "~> 1.0"
-  s.add_runtime_dependency "stormpath-sdk", "1.0.0.beta"
+  s.add_runtime_dependency "stormpath-sdk", "1.0.0.beta.2"
 
   s.add_development_dependency "capybara", "~> 1.1.2"
   s.add_development_dependency "guard-rspec"
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rails", "~> 3.2.1"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "stormpath-rails"
+  s.add_development_dependency "stormpath-rails", "1.0.0.beta.2"
   s.add_development_dependency "vcr"
   s.add_development_dependency "webmock"
 end

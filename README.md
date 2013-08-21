@@ -11,14 +11,17 @@ for developers. This is an OmniAuth strategy that will integrate with Stormpath.
 
    ```sh
    cd spec/dummy
+   gem install bundler
+   bundle install
    rake db:migrate
    rake db:test:prepare
    ```
 
 1. You should then be able to run the full suite of specs from the root of the
-   repo, like so:
+   repo using the following commands:
 
    ```sh
+   cd ../../
    rake spec
    ```
 

@@ -29,7 +29,7 @@ for developers. This is an OmniAuth strategy that will integrate with Stormpath.
 
 1. Clone the [Stormpath-Omniauth](https://github.com/stormpath/stormpath-omniauth) repository to your local
 
-1. From the root of the repo, navigate to the dummy directory and execute the
+2. From the root of the repo, navigate to the dummy directory and execute the
    following Rake tasks to install the stormpath-omniauth gem:
 
    ```sh
@@ -40,6 +40,7 @@ for developers. This is an OmniAuth strategy that will integrate with Stormpath.
    rake db:test:prepare
    ```
 
+<!--
 1. You should then be able to run the full suite of specs from the root of the
    repo using the following commands:
 
@@ -47,6 +48,7 @@ for developers. This is an OmniAuth strategy that will integrate with Stormpath.
    cd ../../
    rake spec
    ```
+-->
 
 ## Usage
 

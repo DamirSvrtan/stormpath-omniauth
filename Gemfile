@@ -2,4 +2,4 @@ source "http://rubygems.org"
 
 gemspec
 
-gem 'stormpath-rails', git: 'git://github.com/stormpath/stormpath-rails.git', branch: 'master'
+gem 'stormpath-rails', '1.0.0.beta.2'

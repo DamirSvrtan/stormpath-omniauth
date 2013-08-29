@@ -7,7 +7,7 @@ for developers. This is an OmniAuth strategy that will integrate with Stormpath.
 
 ### <a name="signup"></a>Sign Up For A Stormpath Account
 
-1. Create a [Stormpath][stormpath] developer account and [create your API Keys][create-api-keys]
+1. Create a [Stormpath](http://www.stormpath.com) developer account and [create your API Keys](https://stormpath.com/docs/console/product-guide#!ManageAPIkeys)
   downloading the "apiKey.properties" file into a ".stormpath"
   folder under your local home directory. So that the Rails gem knows where to find this file,
   add an environment variable called `STORMPATH_API_KEY_FILE_LOCATION` whose value is the full
@@ -17,9 +17,9 @@ for developers. This is an OmniAuth strategy that will integrate with Stormpath.
     export STORMPATH_API_KEY_FILE_LOCATION="/Users/john/.stormpath/apiKey.properties"
     ```
 
-2. Within Stormpath's Admin Console, create an application  and a directory to store your users' accounts through the [Stormpath Admin][stormpath-admin] interface. Make sure to add the newly-created directory as a Account Store for your newly-created application.
+2. Within Stormpath's Admin Console, create an application  and a directory to store your users' accounts through the [Stormpath Admin](https://stormpath.com/docs/console/product-guide) interface. Make sure to add the newly-created directory as a Account Store for your newly-created application.
 
-3. Through the [Stormpath Admin][stormpath-admin] interface, note your application's REST URL. You'll want to create an environment variable called "STORMPATH\_APPLICATION\_URL" whose value is this URL. For example, add into your ~/.bashrc file on OS X:
+3. Through the [Stormpath Admin](https://stormpath.com/docs/console/product-guide) interface, note your application's REST URL. You'll want to create an environment variable called "STORMPATH\_APPLICATION\_URL" whose value is this URL. For example, add into your ~/.bashrc file on OS X:
 
     ```
     export STORMPATH_APPLICATION_URL="https://api.stormpath.com/v1/applications/YOUR_APP_ID"
@@ -27,10 +27,9 @@ for developers. This is an OmniAuth strategy that will integrate with Stormpath.
 
 ### Install and Configure The Stormpath Omniauth Gem
 
-1. Clone the [Stormpath-Omniauth](https://github.com/stormpath/stormpath-omniauth) repository to your local
+1. Clone the [Stormpath-Omniauth](https://github.com/stormpath/stormpath-omniauth) repository to your local machine.
 
-2. From the root of the repo, navigate to the dummy directory and execute the
-   following Rake tasks to install the stormpath-omniauth gem:
+2. From the root of the repo, navigate to the "spec/dummy" directory within the cloned repo and execute the following Rake tasks to install the stormpath-omniauth gem:
 
    ```sh
    cd spec/dummy
@@ -64,7 +63,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-For an example to follow, refer to the [Rails sample app][rails-omniauth-sample].
+For an example to follow, refer to the [Rails sample app](https://github.com/stormpath/stormpath-ruby-samples/tree/master/rails).
 
 To use this integration with Sinatra, include the following in your Sinatra application:
 
@@ -77,11 +76,8 @@ end
 
 ```
 
-For an example to follow, refer to the [Sinatra sample app][sinatra-omniauth-sample].
+For an example to follow, refer to the [Sinatra sample app](https://github.com/stormpath/stormpath-ruby-samples/tree/master/sinatra).
 
 The Stormpath OmniAuth strategy requires only that you pass (as an option) a
 reference to an instance of Stormpath::Resource::Application that the strategy
 will use to authenticate login attempts.
-
-  [sinatra-omniauth-sample]: https://github.com/stormpath/stormpath-ruby-samples/tree/master/sinatra-omniauth
-  [rails-omniauth-sample]: https://github.com/stormpath/stormpath-ruby-samples/tree/master/rails-omniauth

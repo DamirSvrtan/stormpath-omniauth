@@ -1,8 +1,17 @@
-stormpath-sdk-ruby Changelog
+stormpath-omniauth Changelog
 ============================
 
+Version 1.0.0.beta.3
+--------------------
+
+Released on August 29, 2013
+
+- Updated README.md file with some fixes of the setup instructions
+- Changed the stormpath-rails dependency to use http://rubygems.org, instead of the master branch in Github.
+
+
 Version 1.0.0.beta.2
-------------------
+--------------------
 
 Released on August 13, 2013
 
